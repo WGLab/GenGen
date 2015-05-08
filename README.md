@@ -12,4 +12,4 @@ Some of the most useful and more stable programs in this package are:
 
 ## Reference
 
-- Wang K, Li M, Bucan M. Pathway-based approaches for analysis of genome-wide association studies. American Journal of Human Genetics, 81:1278-1283, 2007
+- Wang K, Li M, Bucan M. [Pathway-based approaches for analysis of genome-wide association studies](http://www.cell.com/ajhg/abstract/S0002-9297(07)63775-6). _**American Journal of Human Genetics**_, 81:1278-1283, 2007
