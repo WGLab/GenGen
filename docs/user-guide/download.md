@@ -2,7 +2,7 @@
 
 The stable version of GenGen main package can be downloaded below. The main package DOES NOT include the necessary library files.
 
-[gengen.tar.gz](https://github.com/WangGenomicsLab/GenGen/archive/v1.0.0.tar.gz)
+[GitHub Repository](https://github.com/WangGenomicsLab/GenGen/releases)
 
 ## Supplementary library files
 
