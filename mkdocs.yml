@@ -21,5 +21,9 @@ pages:
 - ['user-guide/install.md', 'User Guide', 'Install GenGen']
 - ['user-guide/usage.md', 'User Guide', 'Usage Instructions']
 
-
-
+# Tutorial
+- ['tutorial/association.md', 'Tutorial', 'GWAS analysis']
+- ['tutorial/pathway.md', 'Tutorial', 'Pathway analysis']
+- ['tutorial/coding.md', 'Tutorial', 'Allele coding conversion']
+- ['tutorial/imputation.md', 'Tutorial', 'Imputation helper']
+- ['tutorial/findld.md', 'Tutorial', 'LD-based SNP selection']
