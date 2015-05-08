@@ -4,7 +4,7 @@
 
 2. The alleles are coded as 1 and 2 in my genotype data, so how can I convert them to ACGT alleles?
 
-    The file may be coded as Illumina's A/B alleles, or be coded by PLINK using `--recode12` argument (see additional explanation [here](/tutorial/coding.md)). In the former case, you can use the `convert_bim_allele.pl` program for conversion to ACGT; in the latter case, you can do noting with it and it is best to ask whoever generated the data for original genotypes.
+    The file may be coded as Illumina's A/B alleles, or be coded by PLINK using `--recode12` argument (see additional explanation [here](../tutorial/coding.md)). In the former case, you can use the `convert_bim_allele.pl` program for conversion to ACGT; in the latter case, you can do noting with it and it is best to ask whoever generated the data for original genotypes.
 
 3. I have a new SNP array, so how can I find the closest genes for each of the SNPs?
 
