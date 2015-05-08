@@ -2,7 +2,7 @@
 
 A few people asked me the best way to identify SNPs in a particular array (for example, Illumina array with 550K markers), that are best proxy for a list of candidate SNPs (for example, dozens of SNPs reported in a meta-analysis paper using imputation data). The `find_ld_snp.pl` program is designed to address this issue. It finds the best proxy markers for a given list of candidate markers based on linkage disequilibrium from a GWAS data set (in PLINK format).
 
-## Instruction
+## Usage
 
 The program requires that PLINK be installed in the system first, since it calls PLINK for LD calculation. Typing the command without arguments will print out a simple help message.
 
