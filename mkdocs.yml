@@ -27,3 +27,8 @@ pages:
 - ['tutorial/coding.md', 'Tutorial', 'Allele coding conversion']
 - ['tutorial/imputation.md', 'Tutorial', 'Imputation helper']
 - ['tutorial/findld.md', 'Tutorial', 'LD-based SNP selection']
+
+# Misc
+- ['misc/faq.md', 'Misc', 'FAQ']
+- ['misc/contributing.md', 'Misc', 'How to contribute']
+- ['misc/version.md', 'Misc', 'Version history']

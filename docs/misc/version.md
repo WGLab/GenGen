@@ -1,0 +1,11 @@
+- 2015May08: moved repository to GitHub as v1.0.0. No change to software per se has been made.
+- 2014Aug13: updated convert_bim_allele.pl. Additional "forward" keyword is added. Note that 'dbsnp' is not equal to 'forward', since some dbSNP records are in reverse strand
+- 2010Apr29: fixed multiple bugs, including issues with permutation procedure in QT analysis, issues with BIM conversion for cnv markers.
+- 2009Aug30: reorganize the directory structure and minor fixes to improve compatibility with various system architecture. Executables for Windows (cygwin and MS Windows) included.
+- 2009Aug07: Added a few programs for helping with genotype imputation and allele coding conversion. Fix the bugs in calculate_association.pl: (1) the --allmarker argument does not work as expected, (2) alleles that were labeled as 3 or 4 are not recognized correctly, (3) the "NA" cannot be recognized correctly in phenotype file for QT analysis.
+- 2009Jan05: Changes in chrX association test.
+- 2008Oct04: Several function enhancements: calculate_association.pl now handle PLINK files (TFAM/TPED) directly; calculate_gsea.pl handle --pvalue_flag by a differnt formula; updated BioCarta/KEGG/GO pathway definition.
+- 2008May19: Several function enhancements for various prorams. Renamed TDT.pm to GWA.pm. Better handling of different computer architecture/platform.
+- 2008Jan14: Several function enhancements for various prorams. Fix allele frequency bug in output of calculate_association.pl.
+- 2007Dec13: added more programs in the public release.
+
