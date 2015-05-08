@@ -1,0 +1,25 @@
+site_name: GenGen
+site_url: http://gengen.openbioinformatics.org/
+repo_url: http://github.com/WangGenomicsLab/GenGen/
+repo_name: GitHub
+site_description: GenGen software distribution site
+site_author: Kai Wang
+site_favicon: favicon.ico
+copyright: 2007-2015 GenGen
+google_analytics: ['UA-7565705-1', 'gengen.openbioinformatics.org']
+
+docs_dir: docs
+#include_search: true
+#use_absolute_urls: true
+#use_directory_urls: false
+
+pages:
+- ['index.md', 'GenGen']
+
+# User Guide
+- ['user-guide/download.md', 'User Guide', 'Download GenGen']
+- ['user-guide/install.md', 'User Guide', 'Install GenGen']
+- ['user-guide/usage.md', 'User Guide', 'Usage Instructions']
+
+
+
