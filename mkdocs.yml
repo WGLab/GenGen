@@ -9,7 +9,7 @@ copyright: 2007-2015 GenGen
 google_analytics: ['UA-7565705-1', 'gengen.openbioinformatics.org']
 
 docs_dir: docs
-#include_search: true
+include_search: true
 #use_absolute_urls: true
 #use_directory_urls: false
 
