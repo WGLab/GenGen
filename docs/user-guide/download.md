@@ -23,6 +23,7 @@ Among the SNP-gene mapping files, hh550\* are for HumanHap550 array, hhall\* are
 - [Human610 version 1 array](http://www.openbioinformatics.org/gengen/download/hh610v1_snptable.txt.gz)
 - [Human660 array](http://www.openbioinformatics.org/gengen/download/hh660_snptable.txt.gz)
 - [Omni version 1 array](http://www.openbioinformatics.org/gengen/download/ho1v1_snptable.txt.gz)
+- [Omni Express version 1 array](http://www.openbioinformatics.org/gengen/download/HumanOmniExpress-24-v1-0-B.SNPtable.gz)
 
 Contact me with issues/bugs in these files as they were not tested by me.
 
