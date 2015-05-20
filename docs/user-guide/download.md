@@ -27,4 +27,6 @@ Among the SNP-gene mapping files, hh550\* are for HumanHap550 array, hhall\* are
 
 Contact me with issues/bugs in these files as they were not tested by me.
 
+You can generate a SNPTable file yourself by downloading the manifest file from Illumina. This is a comma-delimited CSV file and you only need to extract the four relevant columns from this file, then save as tab-delimited formats.
+
 
