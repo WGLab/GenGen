@@ -1,3 +1,5 @@
+![Logo](http://genomics.usc.edu/images/lab/logo/gengen.png)
+
 ## GenGen
 
 GenGen is a suite of free software tools to facilitate the analysis of high-throughput genomics data sets. The package is currently a work-in-progress and infrequently updated.
