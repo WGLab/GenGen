@@ -19,7 +19,6 @@ pages:
 # User Guide
 - ['user-guide/download.md', 'User Guide', 'Download GenGen']
 - ['user-guide/install.md', 'User Guide', 'Install GenGen']
-- ['user-guide/usage.md', 'User Guide', 'Usage Instructions']
 
 # Tutorial
 - ['tutorial/association.md', 'Tutorial', 'GWAS analysis']
