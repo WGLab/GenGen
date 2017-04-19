@@ -4,7 +4,7 @@ In genetic association analysis, allele coding discordance is one commonly encou
 
 Below I briefly describe several commonly used allele coding schemes. To make things easier to understand, let's first look at a screen shot from dbSNP. Simply search "rs1004491" in dbSNP, and click the search result, and this screen will show up. It tells that the SNP rs1004491 is compiled based on about a dozen individual submissions (with ss identifier) from various sites. The SNP is mapped to NCBI build 36, with refSNP allele as C/T in dbSNP, which is in forward strand. You will also notice that while the vast majority of sources indicate that the forward strand is equal to BOTTOM strand, one source (from Illumina Human1 array) indicate otherwise so it is likely to be a wrong annotation from Illumina (even though Illumina was the inventor of the TOP/BOTTOM concept). These types of mistakes happen a lot in practice.
 
-![rs1004491](/docs/img/rs1004491.jpg)
+![rs1004491](../img/rs1004491.jpg)
 
 ### - forward allele
 
