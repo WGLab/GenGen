@@ -4,13 +4,19 @@ In genetic association analysis, allele coding discordance is one commonly encou
 
 Below I briefly describe several commonly used allele coding schemes. To make things easier to understand, let's first look at a screen shot from dbSNP. Simply search "rs1004491" in dbSNP, and click the search result, and this screen will show up. It tells that the SNP rs1004491 is compiled based on about a dozen individual submissions (with ss identifier) from various sites. The SNP is mapped to NCBI build 36, with refSNP allele as C/T in dbSNP.
 
-![rs1004491](img/rs1004491.jpg)
+![rs1004491](/docs/img/rs1004491.jpg)
+
+### - forward allele
+
+This is the allele that most people should be working on. It refers to the allele in the forward strand in a reference genome. However, different versions of reference genomes tend to differ in specific locations with common SNPs; for example, if GRCh37 has a minor allele in a SNP in the reference strand, GRCh38 tends to change this allele back to major allele (I have seen many examples like this already), so forward allele ideally should always be coupled with the genome build to uniquely identify a SNP.
+
+Note that in April 2017 I modified this article to add explanation for forward allele. The GenGen software in GitHub itself was working correctly on forward alleles in the past a few years, but I never updated the documentation so it may have caused some confusion among users. So I emphasize here again: forward allele does not equate dbSNP allele! A -strandfile is necessary to ensure that forward allele is computed correctly from dbSNP allele.
 
 ### - dbSNP allele
 
-This is the most commonly used allele coding scheme, although it has many intrinsic problems that I'll describe below. The scheme assumes that a "forward strand" for a given genome is already known, and that the two alternative alleles are defined with respect to the forward strand (as opposed to the reverse strand). For example, suppose that a SNP has C allele in the forward strand in reference genome sequence (and has a G allele in the reverse strand); an alternative sequence is found in the population that has A allele in the reverse strand (and hence T allele in the forward strand), then the SNP is then coded with C and T alleles. In the above example, you can see that this SNP is a C/T SNP based on forward strand (or a A/G SNP based on reverse strand).
+This is the most commonly used allele coding scheme, although it has many intrinsic problems that I'll describe below. In most cases it is identical as forward strand allele, but there are some exceptions, so users need to exercise caution. The scheme assumes that a "forward strand" for a given genome is already known, and that the two alternative alleles are defined with respect to the forward strand (as opposed to the reverse strand). For example, suppose that a SNP has C allele in the forward strand in reference genome sequence (and has a G allele in the reverse strand); an alternative sequence is found in the population that has A allele in the reverse strand (and hence T allele in the forward strand), then the SNP is then coded with C and T alleles. In the above example, you can see that this SNP is a C/T SNP based on forward strand (or a A/G SNP based on reverse strand).
 
-One obvious problem with this coding scheme is that one must know the "forward strand" with certainty, but this is usually not the case. Even for the well studied human genome, there are still many holes to be filled. It is possible that a sequence is assembled into the forward strand in 2004 human genome assembly, but it becomes reverse strand in the 2006 human genome assembly. It is also possible that a sequence cannot be assigned into either forward or reverse strand, so it's annotated as something like chr1_random in many genome databases. It is also possible that a stretch of forward strand becomes reverse strand in a particular subject due to inversion in this region. These types of situations becomes much worse for other organisms that have only low fold coverage genome sequences: it's simply not feasible to assign many contigs correctly into either a forward or a reverse strand, so even if a SNP is known based on sequencing many subjects, the correct "forward strand" coding cannot be inferred confidently.
+One obvious problem with this coding scheme is that one must know the "forward strand" with certainty, but this is usually not the case. Even for the well studied human genome, there are still many holes to be filled. It is possible that a sequence is assembled into the forward strand in 2004 human genome assembly, but it becomes reverse strand in the 2006 human genome assembly. It is also possible that a sequence cannot be assigned into either forward or reverse strand, so it's annotated as something like chr1_random or a random contig in many genome databases. It is also possible that a stretch of forward strand becomes reverse strand in a particular subject due to inversion in this region. These types of situations becomes much worse for other organisms that have only low fold coverage genome sequences: it's simply not feasible to assign many contigs correctly into either a forward or a reverse strand, so even if a SNP is known based on sequencing many subjects, the correct "forward strand" coding cannot be inferred confidently.
 
 ### - Illumina A/B allele, 1/2 allele, and TOP allele
 
@@ -103,26 +109,31 @@ Four different allele coding types are supported by the `convert_bim_allele.pl` 
 ```
 [kai@beta ~]$ convert_bim_allele.pl 
 Usage:
-convert_bim_allele.pl [arguments] <bimfile> <snptablefile>
+     convert_bim_allele.pl [arguments] <bimfile> <snptablefile>
 
-Optional arguments:
--h, --help print help message
--m, --man print complete documentation
--v, --verbose use verbose output
---intype <ilmn12|ilmnab|top|dbsnp> specify input type
---outtype <ilmn12|ilmnab|top|dbsnp> specify output type
---outfile <file> specify output file name (default: STDOUT)
+     Optional arguments:
+            -h, --help                              print help message
+            -m, --man                               print complete documentation
+            -v, --verbose                           use verbose output
+                --intype <ilmn12|ilmnab|top|dbsnp|forward>  specify input type
+                --outtype <ilmn12|ilmnab|top|dbsnp|forward> specify output type
+                --force                             force execution when allele mismatch is detected (output zero allele)
+                --replacezero                       replace the zero (unobserved) allele by known allele (default: output zero allele)
+                --outfile <file>                    specify output file name (default: STDOUT)
+                --autoflip                          automatically flip strand where appropriate
+                --strandfile <file>                 specify a file with dbSNP strand information
 
-Function: convert a BIM file so that the allele names are changed to the 
-specified outtype.
+     Function: convert a BIM file so that the allele names are changed to the 
+     specified outtype.
+ 
+     Notes: ilmn12=Illumina AB allele designation coded as 1 and 2
+            ilmnab=Illumina AB allele designation
+            top   =Illumina Top Allele call
+            dbsnp =dbSNP (not necessarily forward) allele designation
+            forward=forward strand in reference genome
 
-Notes: ilmn12=Illumina AB allele designation coded as 1 and 2
-ilmnab=Illumina AB allele designation
-top =Illumina Top Allele call
-dbsnp =dbSNP forward strand allele designation
-
-Example: convert_bim_allele.pl old.bim hh550_610.snptable -outfile new.bim -intype ilmnab -outtype top
-convert_bim_allele.pl old.bim hh550_610.snptable -outfile new.bim -intype top -outtype dbsnp
+     Example: convert_bim_allele.pl old.bim hh550_610.snptable -outfile new.bim -intype ilmnab -outtype top
+              convert_bim_allele.pl old.bim hh550_610.snptable -outfile new.bim -intype top -outtype dbsnp
 ```
 
 ### - Convert Illumina A/B (or 1/2) allele coding to other coding types
@@ -219,7 +230,7 @@ NOTICE: The new bim file will be written to test.dbsnp.bim ... Done
 22 rs229527 0 35911431 T G
 ```
 
-### - Convert forward strand coding to other coding types
+### - Convert dbSNP strand coding to other coding types
 
 An example is given below. The `--intype` of dbsnp is used, which denotes that the alleles are in forward strand orientation.
 
