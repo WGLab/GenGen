@@ -16,7 +16,7 @@ Note that you can use both double dash or single dash in the command line (so `-
 
 ## General overview of two-pass procedure
 
-![flowchart](img/association_flowchart.jpg)
+![flowchart](../img/association_flowchart.jpg)
 
 A general overview of the two-pass procedure used in this program is given in the above figure.
 
