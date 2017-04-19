@@ -12,7 +12,7 @@ Note that you can use both double dash or single dash in the command line (so `-
 
 ## General overview of data flow patterns
 
-![flowchart](img/pathway_flowchart.jpg)
+![flowchart](../img/pathway_flowchart.jpg)
 
 A general overview of the testing procedure used in this program is given in the above figure. This program uses permutation extensively, so the entire procedure is computationally extremely expensive. Generally speaking, I recommended using 100 permutation cycles on 10 computational nodes (totaling 1000 permutation cycles) for generating GWA test statistic values, then run `calculate_gsea.pl` program on each of the 10 association results files and record 10 log files, finally use the combine_gsea.pl program to combine the 10 log files together to generate the pathway significance file. (The need to run 100 permutations on 10 computational nodes is a practical one: for a 4000 sample study with 500K SNP markers, it takes 24-48 hours to finish 100 permutation cycles by the calculate_association.pl program). The entire procedure takes up to 3 days for this set up, which is generally acceptable.
 
