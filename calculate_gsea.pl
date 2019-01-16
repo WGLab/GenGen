@@ -303,7 +303,7 @@ sub readPermFile {
 	my ($marker_index, $column);
 	for my $i (0 .. @header-1) {
 		if ($pvalue_flag) {
-			$header[$i] =~ m/_P_PERM$/ and $column = $i;
+			$header[$i] =~ m/P_PERM$/ and $column = $i;
 		} else {
 			defined $column and $header[$i] =~ m/(CHI2|F)_PERM$/ and confess "Error: the permutation file $permfile cannot contain multiple types of permutation results ($header[$column] and $header[$i])";
 			$header[$i] =~ m/(CHI2|F)_PERM$/ and $column = $i;		#look for the column "CHI2_PERM" or "F_PERM" in the permutation file to retrieve permutated test chi2 statistic values
