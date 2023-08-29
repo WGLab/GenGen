@@ -13,22 +13,22 @@ include_search: true
 #use_absolute_urls: true
 #use_directory_urls: false
 
-pages:
-- ['index.md', 'GenGen']
+nav:
+- GenGen: index.md
 
-# User Guide
-- ['user-guide/download.md', 'User Guide', 'Download GenGen']
-- ['user-guide/install.md', 'User Guide', 'Install GenGen']
+- User Guide
+  - Download GenGen: user-guide/download.md
+  - Install GenGen: user-guide/install.md
 
-# Tutorial
-- ['tutorial/association.md', 'Tutorial', 'GWAS analysis']
-- ['tutorial/pathway.md', 'Tutorial', 'Pathway analysis']
-- ['tutorial/coding.md', 'Tutorial', 'Allele coding conversion']
-- ['tutorial/imputation.md', 'Tutorial', 'Imputation helper']
-- ['tutorial/findld.md', 'Tutorial', 'LD-based SNP selection']
-- ['tutorial/scan.md', 'Tutorial', 'Scan genomic feature']
+- Tutorial
+  - GWAS analysis: tutorial/association.md
+  - Pathway analysis: tutorial/pathway.md
+  - Allele coding conversion: tutorial/coding.md
+  - Imputation helper: tutorial/imputation.md
+  - LD-based SNP selection: tutorial/findld.md
+  - Scan genomic feature: tutorial/scan.md
 
-# Misc
-- ['misc/faq.md', 'Misc', 'FAQ']
-- ['misc/contributing.md', 'Misc', 'How to contribute']
-- ['misc/version.md', 'Misc', 'Version history']
+- Misc
+  - FAQ: misc/faq.md
+  - How to contribute: misc/contributing.md
+  - Version history: misc/version.md
