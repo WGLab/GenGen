@@ -16,11 +16,11 @@ include_search: true
 nav:
 - GenGen: index.md
 
-- User Guide
+- User Guide:
   - Download GenGen: user-guide/download.md
   - Install GenGen: user-guide/install.md
 
-- Tutorial
+- Tutorial:
   - GWAS analysis: tutorial/association.md
   - Pathway analysis: tutorial/pathway.md
   - Allele coding conversion: tutorial/coding.md
@@ -28,7 +28,7 @@ nav:
   - LD-based SNP selection: tutorial/findld.md
   - Scan genomic feature: tutorial/scan.md
 
-- Misc
+- Misc:
   - FAQ: misc/faq.md
   - How to contribute: misc/contributing.md
   - Version history: misc/version.md
