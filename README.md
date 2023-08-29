@@ -1,4 +1,4 @@
-![Logo](http://genomics.usc.edu/images/lab/logo/gengen.png)
+![Logo](docs/img/gengen.png)
 
 ## GenGen
 
