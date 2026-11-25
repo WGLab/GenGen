@@ -4,12 +4,13 @@ repo_url: http://github.com/WangGenomicsLab/GenGen/
 repo_name: GitHub
 site_description: GenGen software distribution site
 site_author: Kai Wang
-site_favicon: favicon.ico
-copyright: 2007-2015 GenGen
+#site_favicon or favicon is obsolete, move favicon.ico to docs/img instead
+copyright: 2007-2026 GenGen
 google_analytics: ['UA-7565705-1', 'gengen.openbioinformatics.org']
 
 docs_dir: docs
-include_search: true
+#include_search is obsolete
+#include_search: true
 #use_absolute_urls: true
 #use_directory_urls: false
 
